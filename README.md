@@ -25,7 +25,7 @@ These features were deemed essential to have in the system.
 
 The program's chart is as follows:
 
-![Pacmann.io_Project] (/Flowchart.png)
+![Pacmann.io_Project](/Flowchart.png)
 
 Every action taken by each functions will return the user to the main action prompt except the ```total_price_disc()``` which will then end the program.
 
@@ -42,27 +42,27 @@ The journey goes like this. The user enters their name below:
 
 Then, the date, time, and transaction ID and the main action prompt will appear
 
-![Pacmann.io_Project](/Images/img1.jpeg)
+![Pacmann.io_Project](/Images/img2.jpeg)
 
 Then, the user must choose option 1 which will execute ```add_item()```, and enter the first item name (Fried Chicken), quantity (2), and price (20000). 
 
-(/img3.png)
+![Pacmann.io_Project](/Images/img3.jpeg)
 
 Then, the user must repeat choosing option 1 and do the same for Toothpaste. Afterwards, it will look like this:
 
-(/img4.png)
+![Pacmann.io_Project](/Images/img4.jpeg)
 
 Suddenly, the user, being the forgetful person that they are, remembers that they actually did not want to buy toothpaste and decides to remove it from the cart. They must use option 5, which will execute ```delete_item()``` and then choose 2 to remove toothpaste from cart. The cart will look like this
 
-(/img5.png)
+![Pacmann.io_Project](/Images/img5.jpeg)
 
 Alas, this one customer really is forgetful. They forgot that they are on a strict diet and must not eat chickens. So they must remove all the items on the cart. They must choose option 6, which will run ```reset_transaction()``` and empty the cart.
 
-(/img6.png)
+![Pacmann.io_Project](/Images/img6.jpeg)
 
 Now, after deciding that they've had enough fun at the store, the customer wants to go home and chill. He must check out his cart by choosing option 8, which will execute ```total_price_disc()``` and ends the program for good.
 
-(/img7.png)
+![Pacmann.io_Project](/Images/img7.jpeg)
 
 The customer should now be happy that they received discount due to their excessive spending and goes home in peace. 
 
