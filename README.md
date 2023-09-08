@@ -25,7 +25,7 @@ These features were deemed essential to have in the system.
 
 The program's chart is as follows:
 
-(/Flowchart.png)
+![Pacmann.io_Project] (/Flowchart.png)
 
 Every action taken by each functions will return the user to the main action prompt except the ```total_price_disc()``` which will then end the program.
 
