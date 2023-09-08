@@ -38,11 +38,11 @@ The buyer will add an item of their choosing with this option. They want to add 
 
 The journey goes like this. The user enters their name below:
 
-(/img1.png)
+![Pacmann.io_Project](/Images/img1.jpeg)
 
 Then, the date, time, and transaction ID and the main action prompt will appear
 
-(/img2.png)
+![Pacmann.io_Project](/Images/img1.jpeg)
 
 Then, the user must choose option 1 which will execute ```add_item()```, and enter the first item name (Fried Chicken), quantity (2), and price (20000). 
 
