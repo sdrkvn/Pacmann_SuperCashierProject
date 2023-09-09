@@ -68,7 +68,7 @@ The customer should now be happy that they received discount due to their excess
 
 **Conclusion**
 
-This program is a simple yet effective way to elevate your customer journey. However, this may not be suitable for a large retail store where customers may purchase many items and in bulk as they would have to add each item one by one. 
+This program is a simple yet effective way to elevate your customer journey. This is perfect for a small mom-and-pop stores with limited items in sale and stock. However, this may not be suitable for a large retail store where customers may purchase many items and in bulk as they would have to add each item one by one. A much better program would have to be created for such larger stores.
 
 Also, this is where the author realises that programming is not easy.
 
