@@ -1,6 +1,6 @@
 import datetime #importing the date and time of transaction
 import uuid #importing the user-generated ID 
-from Cashier import * #importing the Transaction module to start the cashier features
+from cashier import * #importing the Transaction module to start the cashier features
 
 #the below section is for the home page
 print ('*' *55)
