@@ -9,7 +9,7 @@ print ('*' *55)
 print ()
 
 while True:
-    buyer_name = input('Please enter your name here:')
+    buyer_name = input('Please enter your name here:') #user enters the name
     break
 
 from datetime import datetime #importing the date & time to be shown
@@ -30,7 +30,7 @@ trnsct_123 = Transaction('Item', 'Price', 'Quantity', 'Shopping Cart')
 
 end_programme = True
 
-while end_programme:
+while end_programme: #starting a while loop for the main action prompt
     print ('Your cart:')
     
     print ('-'*55)
@@ -58,36 +58,36 @@ while end_programme:
         except ValueError:
             print('Please select between options 1-8')
         
-        if buyer_input == 1: #if buyer selects option 1
+        if buyer_input == 1: #if buyer selects option 1 then will add item to cart
             print ('Adding new item to shopping cart')
             print (trnsct_123.add_item())
         
-        elif buyer_input == 2: #if buyer selects option 2
+        elif buyer_input == 2: #if buyer selects option 2 then will update an item in cart
             print ('Updating item name in your cart')
             print (trnsct_123.update_item_name())
         
-        elif buyer_input == 3: #if buyer selects option 3
+        elif buyer_input == 3: #if buyer selects option 3 will update item quantity in cart
             print ('Updating item quantity in your cart')
             print (trnsct_123.update_item_quantity())
         
-        elif buyer_input == 4: #if buyer selects option 4
+        elif buyer_input == 4: #if buyer selects option 4 then will update item price in cart
             print ('Updating item price in your cart')
             print (trnsct_123.update_item_price())
     
-        elif buyer_input == 5: #if buyer selects option 5
+        elif buyer_input == 5: #if buyer selects option 5 then will remove a row of item in cart
             print ('Removing item from your cart')
             print (trnsct_123.delete_item())
                
-        elif buyer_input == 6: #if buyer selects option 6
+        elif buyer_input == 6: #if buyer selects option 6 then will reset entire shopping cart
             print ('Resetting all the items on your cart')
             print (trnsct_123.reset_transaction())
             print ('Your cart has been reset and is now empty')
                
-        elif buyer_input == 7: #if buyer selects option 7
+        elif buyer_input == 7: #if buyer selects option 7 then will check the order table grid
             print ('Here is your cart')
             print (trnsct_123.check_order())
     
-        elif buyer_input == 8: #if buyer selects option 8
+        elif buyer_input == 8: #if buyer selects option 8 then will check total price, discount if any, and then ends the program
             print ('Checking out your cart')
             print (trnsct_123.check_order())
             print (trnsct_123.total_price_disc())
