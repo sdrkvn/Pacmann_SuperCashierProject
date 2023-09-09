@@ -4,6 +4,9 @@ header = ["No", "Item name", "Quantity", "Price IDR"] #this is the header for th
 
 class Transaction: #this is the main class which will contain all the methods and features
     def __init__ (self, item, quantity, price, cart):
+        """
+        The main class Transaction has item, quantity, and price, and also a cart which the customer will use 
+        """
         self.item = item
         self.quantity = quantity
         self.price = price
@@ -13,7 +16,7 @@ class Transaction: #this is the main class which will contain all the methods an
         while True:
             self.item = (input ('Please type item name: ')) #this is where customer enters item name
             if self.item.isnumeric():
-                print ('Invalid input, please enter item name.')
+                print ('Invalid input, please enter item name.') #this acts as failsafe to ensure customer enters correct item name
             else:
                 break
                 
@@ -22,17 +25,17 @@ class Transaction: #this is the main class which will contain all the methods an
                 self.quantity = int(input('Please enter item quantity: ')) #this is where customer enters item quantity
                 break
             except ValueError:
-                print ('Invalid input, please enter item quantity: ')
+                print ('Invalid input, please enter item quantity: ') #this acts as failsafe to ensure customer enters correct item quantity
                 
         while True:
             try:
                 self.price = int(input('Please enter item price: ')) #this is where customer enters item price
                 break
             except ValueError:
-                print ('Invalid input, please enter item price.')
+                print ('Invalid input, please enter item price.') #this acts as failsafe to ensure customer enters correct item price
                                                                        
         transaction_list = [len(self.cart) +1, self.item, self.quantity, self.price]
-        
+        """this section will add item to the shopping cart list by .append"""
         self.cart.append(transaction_list)
                                        
         return tabulate (self.cart, headers=header, tablefmt='grid') #this will allow the shopping cart to be tabulated and shown as grid
@@ -41,6 +44,7 @@ class Transaction: #this is the main class which will contain all the methods an
         item_index = int(input('Please enter which item to be updated: ')) -1
         if item_index < 0 or item_index >= len(self.cart):
             print ('!WARNING! Item is not in the cart, please enter existing item number.')
+            """ this is to ensure that buyer enters an existing item in cart """
             return
             
         new_item = input('Please enter new item: ')
@@ -53,6 +57,7 @@ class Transaction: #this is the main class which will contain all the methods an
         item_index = int(input('Please enter which item quantity to be updated: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Item quantitiy is not in the cart, please update existing quantity: ')
+            """ this is to ensure that buyer enters an existing item quantity in cart """
             return
         
         new_quantity = input('Please enter new item quantity: ')
@@ -65,6 +70,7 @@ class Transaction: #this is the main class which will contain all the methods an
         item_index = int(input('Please enter which item price to be updated: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Item price is not in the cart, please update existing item price.')
+            """ this is to ensure that buyer enters an existing item price in cart """
             return
         
         new_item_price = input('Please enter new item price: ')
@@ -77,6 +83,7 @@ class Transaction: #this is the main class which will contain all the methods an
         item_index = int(input('Please choose which item to be removed: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Invalid item')
+            """ this is to ensure that buyer chooses an existing item in cart """
             return
         
         self.cart.pop (item_index)
@@ -86,12 +93,12 @@ class Transaction: #this is the main class which will contain all the methods an
     def reset_transaction(self): #this is to reset the entire shopping cart to an empty one
         self.cart = []
         
-        return tabulate (self.cart, headers=header, tablefmt='grid')
+        return tabulate (self.cart, headers=header, tablefmt='grid') #this is to show that cart is now empty
     
     def check_order(self): #this is to check if the orders are correct
         print ('Order is correct. Here is your cart:')
         
-        return tabulate (self.cart, headers=header, tablefmt='grid')
+        return tabulate (self.cart, headers=header, tablefmt='grid') #this is because this method simply tabulate the cart again
     
     def total_price_disc(self): #this will show the total price, and if any discount is rewarded
         base_price = 0
