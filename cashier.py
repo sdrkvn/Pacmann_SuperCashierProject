@@ -2,16 +2,16 @@ from tabulate import tabulate
 
 header = ["No", "Item name", "Quantity", "Price IDR"] #this is the header for the shopping cart table that we will use
 
-class Transaction:
+class Transaction: #this is the main class which will contain all the methods and features
     def __init__ (self, item, quantity, price, cart):
         self.item = item
         self.quantity = quantity
         self.price = price
         self.cart = []
     
-    def add_item(self):
+    def add_item(self): #this is the feature to add an item to cart
         while True:
-            self.item = (input ('Please type item name: '))
+            self.item = (input ('Please type item name: ')) #this is where customer enters item name
             if self.item.isnumeric():
                 print ('Invalid input, please enter item name.')
             else:
@@ -19,14 +19,14 @@ class Transaction:
                 
         while True:
             try:
-                self.quantity = int(input('Please enter item quantity: '))
+                self.quantity = int(input('Please enter item quantity: ')) #this is where customer enters item quantity
                 break
             except ValueError:
                 print ('Invalid input, please enter item quantity: ')
                 
         while True:
             try:
-                self.price = int(input('Please enter item price: '))
+                self.price = int(input('Please enter item price: ')) #this is where customer enters item price
                 break
             except ValueError:
                 print ('Invalid input, please enter item price.')
@@ -35,9 +35,9 @@ class Transaction:
         
         self.cart.append(transaction_list)
                                        
-        return tabulate (self.cart, headers=header, tablefmt='grid')
+        return tabulate (self.cart, headers=header, tablefmt='grid') #this will allow the shopping cart to be tabulated and shown as grid
                                        
-    def update_item_name(self):
+    def update_item_name(self): #this is to update or revise an existing item in the cart
         item_index = int(input('Please enter which item to be updated: ')) -1
         if item_index < 0 or item_index >= len(self.cart):
             print ('!WARNING! Item is not in the cart, please enter existing item number.')
@@ -49,7 +49,7 @@ class Transaction:
                                        
         return tabulate (self.cart, headers=header, tablefmt='grid')
         
-    def update_item_quantity(self):
+    def update_item_quantity(self): #this is to update or revise an existing item quantity in the cart
         item_index = int(input('Please enter which item quantity to be updated: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Item quantitiy is not in the cart, please update existing quantity: ')
@@ -61,7 +61,7 @@ class Transaction:
         
         return tabulate (self.cart, headers=header, tablefmt='grid')
         
-    def update_item_price(self):
+    def update_item_price(self): #this is to update or revise an existing item's price in the cart
         item_index = int(input('Please enter which item price to be updated: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Item price is not in the cart, please update existing item price.')
@@ -73,7 +73,7 @@ class Transaction:
         
         return tabulate (self.cart, headers=header, tablefmt='grid')
         
-    def delete_item(self):
+    def delete_item(self): #this is to remove an item, along with quantity and price, from the cart
         item_index = int(input('Please choose which item to be removed: ')) -1
         if item_index <0 or item_index >= len(self.cart):
             print ('!WARNING! Invalid item')
@@ -83,17 +83,17 @@ class Transaction:
         
         return tabulate (self.cart, headers=header, tablefmt='grid')
     
-    def reset_transaction(self):
+    def reset_transaction(self): #this is to reset the entire shopping cart to an empty one
         self.cart = []
         
         return tabulate (self.cart, headers=header, tablefmt='grid')
     
-    def check_order(self):
+    def check_order(self): #this is to check if the orders are correct
         print ('Order is correct. Here is your cart:')
         
         return tabulate (self.cart, headers=header, tablefmt='grid')
     
-    def total_price_disc(self):
+    def total_price_disc(self): #this will show the total price, and if any discount is rewarded
         base_price = 0
         for item in self.cart:
             price = item[3]
